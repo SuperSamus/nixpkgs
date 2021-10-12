@@ -2414,6 +2414,8 @@ with pkgs;
 
   codespell = with python3Packages; toPythonApplication codespell;
 
+  connect-tunnel = callPackage ../applications/networking/connect-tunnel { };
+
   coolreader = libsForQt5.callPackage ../applications/misc/coolreader {};
 
   corsair = with python3Packages; toPythonApplication corsair-scan;
