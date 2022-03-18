@@ -16618,6 +16618,8 @@ with pkgs;
     fteqw-dedicated
     fteqcc;
 
+  am2r = callPackage_i686 ../games/am2r { inherit xdelta; };
+
   heroic-unwrapped = callPackage ../games/heroic {
     # Match the version used by the upstream package.
     electron = electron_31;
