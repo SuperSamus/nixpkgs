@@ -33792,6 +33792,8 @@ with pkgs;
 
   ace-of-penguins = callPackage ../games/ace-of-penguins { };
 
+  am2r = callPackage_i686 ../games/am2r { inherit xdelta; };
+
   among-sus = callPackage ../games/among-sus { };
 
   antsimulator = callPackage ../games/antsimulator { };
