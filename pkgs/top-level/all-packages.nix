@@ -37350,6 +37350,8 @@ with pkgs;
 
   heroic = callPackage ../games/heroic/fhsenv.nix { };
 
+  jak-project = callPackage ../games/jak-project {  };
+
   julius = callPackage ../games/julius { };
 
   jumpnbump = callPackage ../games/jumpnbump { };
