@@ -35887,6 +35887,8 @@ with pkgs;
 
   caffeWithCuda = caffe.override { cudaSupport = true; };
 
+  caffeine = python3Packages.callPackage ../tools/X11/caffeine {};
+
   caffeine-ng = python3Packages.callPackage ../tools/X11/caffeine-ng {};
 
   cntk = callPackage ../applications/science/math/cntk {
