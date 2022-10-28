@@ -10914,6 +10914,8 @@ self: super: with self; {
 
   tern = callPackage ../development/python-modules/tern { };
 
+  teroshdl = callPackage ../development/python-modules/teroshdl { };
+
   tesla-powerwall = callPackage ../development/python-modules/tesla-powerwall { };
 
   tesla-wall-connector = callPackage ../development/python-modules/tesla-wall-connector { };
@@ -11668,6 +11670,8 @@ self: super: with self; {
 
   vqgan-jax = callPackage ../development/python-modules/vqgan-jax { };
 
+  vsg = callPackage ../development/python-modules/vsg { };
+
   vsts = callPackage ../development/python-modules/vsts { };
 
   vsts-cd-manager = callPackage ../development/python-modules/vsts-cd-manager { };
@@ -11686,6 +11690,8 @@ self: super: with self; {
   vultr = callPackage ../development/python-modules/vultr { };
 
   vulture = callPackage ../development/python-modules/vulture { };
+
+  vunit-hdl = callPackage ../development/python-modules/vunit-hdl { };
 
   vxi11 = callPackage ../development/python-modules/vxi11 { };
 
@@ -11725,6 +11731,8 @@ self: super: with self; {
 
   wasmerPackages = pkgs.recurseIntoAttrs (callPackage ../development/python-modules/wasmer { });
   inherit (self.wasmerPackages) wasmer wasmer-compiler-cranelift wasmer-compiler-llvm wasmer-compiler-singlepass;
+
+  wasmtime-py = callPackage ../development/python-modules/wasmtime-py { };
 
   watchdog = callPackage ../development/python-modules/watchdog {
     inherit (pkgs.darwin.apple_sdk.frameworks) CoreServices;
@@ -12105,6 +12113,8 @@ self: super: with self; {
   youtube-search-python = callPackage ../development/python-modules/youtube-search-python { };
 
   youtube-transcript-api = callPackage ../development/python-modules/youtube-transcript-api { };
+
+  yowasp-yosys = callPackage ../development/python-modules/yowasp-yosys { };
 
   yowsup = callPackage ../development/python-modules/yowsup { };
 

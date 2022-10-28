@@ -2517,6 +2517,8 @@ let
         };
       };
 
+      teros-technology.teroshdl = callPackage ./teroshdl { };
+
       theangryepicbanana.language-pascal = buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "language-pascal";
