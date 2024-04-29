@@ -37,7 +37,7 @@ in with src; {
     buildScript = substituteAll {
         src = ./builder-wow.sh;
         # pkgconfig has trouble picking the right architecture
-        pkgconfig64remove = lib.makeSearchPathOutput "dev" "lib/pkgconfig" [ pkgs.glib pkgs.gst_all_1.gstreamer ];
+        pkgconfig64remove = lib.makeSearchPathOutput "dev" "lib/pkgconfig" [ pkgs.glib pkgs.gst_all_1.gstreamer pkgs.curl ];
       };
     platforms = [ "x86_64-linux" ];
     mainProgram = "wine64";
