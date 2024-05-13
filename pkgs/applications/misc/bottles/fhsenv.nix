@@ -7,7 +7,7 @@
 
 let fhsEnv = {
   # Many WINE games need 32bit
-  multiArch = true;
+  multiArch = false;
 
   targetPkgs = pkgs: with pkgs; [
     bottles-unwrapped
@@ -42,6 +42,7 @@ let fhsEnv = {
         gst-plugins-good
         gst-plugins-ugly
         gst-plugins-bad
+        gst-plugins-rs
         gst-libav
       ];
     in
