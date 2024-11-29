@@ -16,6 +16,7 @@
   stdenv,
   wrapGAppsHook3,
   enableDiscordRpc ? false,
+  libOnly ? false,
 }:
 
 let
@@ -36,17 +37,19 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-wSt3kyjRxKBnDOVY10jq4cpv7uIaBUIcsZr6aU7XnMA=";
   };
 
-  outputs = [ "out" "dev" "doc" "lib" "man" ];
+  outputs = [ "out" "dev" "doc" "lib" ] ++ lib.optionals (!libOnly) [ "man" ];
 
   nativeBuildInputs = [
-    SDL2
     cmake
+  ]
+  ++ lib.optionals (!libOnly) [
+    SDL2
     pkg-config
     wrapGAppsHook3
     wrapQtAppsHook
   ];
 
-  buildInputs = [
+  buildInputs = lib.optionals (!libOnly) ([
     SDL2
     ffmpeg
     libedit
@@ -59,10 +62,11 @@ stdenv.mkDerivation (finalAttrs: {
     qtmultimedia
     qttools
   ]
-  ++ lib.optionals enableDiscordRpc [ discord-rpc ];
+  ++ lib.optionals enableDiscordRpc [ discord-rpc ]);
 
   cmakeFlags = [
     (lib.cmakeBool "USE_DISCORD_RPC" enableDiscordRpc)
+    (lib.cmakeBool "LIBMGBA_ONLY" libOnly)
   ];
 
   strictDeps = true;
