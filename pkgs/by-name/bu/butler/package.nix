@@ -15,25 +15,20 @@
 
 buildGoModule rec {
   pname = "butler";
-  version = "15.24.0";
+  version = "15.25.0";
 
   src = fetchFromGitHub {
     owner = "itchio";
     repo = "butler";
     tag = "v${version}";
-    hash = "sha256-Gzf+8icPIXrNc8Vk8z0COPv/QA6GL6nSvQg13bAlfZM=";
+    hash = "sha256-1X6g+fB5C5lkFyovXy80GvldYrvbXheq3mHspKHdJcg=";
   };
 
   buildInputs = [ brotli ];
 
-  patches = [ ./go.mod.patch ];
-
   doCheck = false; # disabled because the tests don't work in a non-FHS compliant environment.
 
-  vendorHash = "sha256-A6u7bKI7eoptkjBuXoQlLYHkEVtrl8aNnBb65k1bFno=";
-
-  # Needed due to vendored dependencies breaking in gnu23 mode.
-  env.NIX_CFLAGS_COMPILE = "-std=gnu17";
+  vendorHash = "sha256-vA2DsaX1t26tfG2PRhaTigip/N0dpXWiljXdoqAxzIw=";
 
   meta = {
     description = "Command-line itch.io helper";
