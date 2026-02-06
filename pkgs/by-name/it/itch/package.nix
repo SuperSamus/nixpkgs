@@ -12,12 +12,12 @@
 }:
 
 let
-  version = "26.1.9";
+  version = "26.6.0";
 
   itch-setup = fetchzip {
-    url = "https://broth.itch.zone/itch-setup/linux-amd64/1.26.0/itch-setup.zip";
+    url = "https://broth.itch.zone/itch-setup/linux-amd64/1.29.0/archive.zip";
     stripRoot = false;
-    hash = "sha256-5MP6X33Jfu97o5R1n6Og64Bv4ZMxVM0A8lXeQug+bNA=";
+    hash = "sha256-T4xvso3jJ9XsiG7QTpYdcvcClg2ejbGS4R/+goaHl18=";
   };
 
   sparseCheckout = "/release/images/itch-icons";
@@ -36,7 +36,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   inherit version;
 
   src = fetchzip {
-    url = "https://broth.itch.zone/itch/linux-amd64/${finalAttrs.version}/archive/default#.zip";
+    url = "https://github.com/itchio/itch/releases/download/${finalAttrs.version}/itch-v${finalAttrs.version}-linux-amd64.tar.gz";
     stripRoot = false;
     hash = "sha256-4k6afBgOKGs7rzXAtIBpmuQeeT/Va8/0bZgNYjuJhgI=";
   };
@@ -97,7 +97,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/itchio/itch";
     changelog = "https://github.com/itchio/itch/releases/tag/v${version}-canary";
     license = lib.licenses.mit;
-    platforms = lib.platforms.linux;
+    platforms = [ "x86_64-linux" ];
     sourceProvenance = [ lib.sourceTypes.binaryBytecode ];
     maintainers = with lib.maintainers; [ pasqui23 ];
     mainProgram = "itch";
